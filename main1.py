@@ -155,26 +155,127 @@ country = {'code': 'RU', "name": "Russia", "population": 144}
 # country.popitem()
 # print(country)
 
-person = {
-  'user_1': {'name': 'Alice', 'age': 30, 'address': ['Street 1', 'City A'], 'grades': {'math': 90, 'science': 85}},
-  'user_2': {'name': 'Bob', 'age': 25, 'address': ['Street 2', 'City B'], 'grades': {'math': 80, 'science': 88}},
-  'user_3': {'name': 'Charlie', 'age': 35, 'address': ['Street 3', 'City C'], 'grades': {'math': 95, 'science': 92}},
-}
+# person = {
+#   'user_1': {'name': 'Alice', 'age': 30, 'address': ['Street 1', 'City A'], 'grades': {'math': 90, 'science': 85}},
+#   'user_2': {'name': 'Bob', 'age': 25, 'address': ['Street 2', 'City B'], 'grades': {'math': 80, 'science': 88}},
+#   'user_3': {'name': 'Charlie', 'age': 35, 'address': ['Street 3', 'City C'], 'grades': {'math': 95, 'science': 92}},
+# }
 
-for user_id, user_info in person.items():
-  name = user_info['name']
-  age = user_info['age']
-  city = user_info['address'][1]
-  math_grade = user_info['grades']['math']
-  science_grade = user_info['grades']['science']
+# for user_id, user_info in person.items():
+#   name = user_info['name']
+#   age = user_info['age']
+#   city = user_info['address'][1]
+#   math_grade = user_info['grades']['math']
+#   science_grade = user_info['grades']['science']
   
-  print(f"User ID: {user_id}")
-  print(f"Name: {name}")
-  print(f"Age: {age}")
-  print(f"City: {city}")
-  print(f"Math Grade: {math_grade}")
-  print(f"Science Grade: {science_grade}")
-  print("-----------------------")
+#   print(f"User ID: {user_id}")
+#   print(f"Name: {name}")
+#   print(f"Age: {age}")
+#   print(f"City: {city}")
+#   print(f"Math Grade: {math_grade}")
+#   print(f"Science Grade: {science_grade}")
+#   print("-----------------------")
 
 
 ##################### Множества (set и frozenset) ######################
+
+# data = set('hello')
+data = {4,2,3,4,5,4,1}
+data.add(10)
+data.remove(3)
+data.update([7,8,9, True, 'hello'])
+data.pop()
+# data.clear()
+
+nums = {3,5,1,7,9, 9 ,1}
+new_nums = set(nums)
+
+new_data = frozenset([4,5,4,1,7,8,9, True, 'hello'])
+
+
+# print(new_data)
+
+
+##################### Функции (def, lambda) ######################
+
+# def sum(a, b):
+#   return a + b
+
+# print(sum(3, 5))
+# print(sum(1.5, 2.5))
+
+num1 = [8.1, 3.1, 3.2, 5, 7 ,9.4]
+
+# min_num = num1[0]
+# for n in num1:
+#   if (n < min_num):
+#     min_num = n
+
+# print("Min:", min_num)
+
+
+# def get_min(data):
+#   min_num = data[0]
+#   for n in data:
+#     if n < min_num:
+#       min_num = n
+#   return min_num
+
+# print("Min:", get_min(num1))
+
+
+# func = lambda x, y: x * y
+# print(func(3, 5))
+
+
+##################### Работа с файлами за счет Питон #####################
+
+
+# input_data = input("Введите данные: ")
+# data_file = open('data/text.txt', 'a')
+
+# data_file.write(input_data + "\n")
+
+
+# data_file.close()
+
+
+
+# file = open('data/text.txt', 'r')
+
+# # print(file.read())
+
+# for line in file:
+#   print(line, end='')
+
+# file.close()
+
+
+##################### Замыкания
+def outer_func():
+  n = 5
+
+  def inner_func():
+    nonlocal n
+    n += 1
+    print(n)
+  return inner_func
+
+# my_func = outer_func()
+# my_func()
+# my_func()
+
+
+##################### Декораторы
+def select(input_func):
+  def output_func():
+    print("************************")
+    input_func()
+    print("************************")
+  return output_func
+
+@select
+def print_data():
+  print("Hello, World!")
+
+# print_data()
