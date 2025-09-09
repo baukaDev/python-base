@@ -279,3 +279,34 @@ def print_data():
   print("Hello, World!")
 
 # print_data()
+
+############### Обработчик исключений. Конструкция «try - except» 
+
+# x =0
+# while x == 0:
+#   try:
+#     x = int(input("Введите число: "))
+#     x += 5
+#     print(x)
+#   except ValueError:
+#     print("Ошибка: введите число!")
+
+
+# try:
+#   x = 10 / 2
+#   print(x)
+# except ZeroDivisionError as e:
+#   print("Ошибка деления на ноль!", e)
+# else: ######## если нет ошибок
+#   print("Ошибок нет.")
+# finally:
+#   print("Операция завершена.")
+
+
+####################### Менеджер «With ... as» для работы с файлами
+
+try:
+  with open("data/text2.txt", "r", encoding="utf-8") as file:
+    print(file.read())
+except FileNotFoundError:
+  print("Файл не найден!")
