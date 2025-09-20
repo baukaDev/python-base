@@ -305,8 +305,43 @@ def print_data():
 
 ####################### Менеджер «With ... as» для работы с файлами
 
-try:
-  with open("data/text2.txt", "r", encoding="utf-8") as file:
-    print(file.read())
-except FileNotFoundError:
-  print("Файл не найден!")
+# try:
+#   with open("data/text2.txt", "r", encoding="utf-8") as file:
+#     print(file.read())
+# except FileNotFoundError:
+#   print("Файл не найден!")
+
+
+############## Модули в языке Питон. Создание и работа с модулями
+
+# import datetime as dt
+
+# print(dt.datetime.now().time())
+
+import sys, os, platform
+import random
+from math import sqrt # импорт только одной функции из модуля
+  
+# print(sys.path)
+# print(os.name)
+# print(platform.system())
+# print(platform.release())
+
+# print(random.randint(1,100))  # случайное число от 1 до 100
+# print(random.choice(['red', 'black', 'green']))  # случайный выбор из списка
+
+# print(sqrt(25))  # квадратный корень из 25
+
+
+###### созданный модуль modules.py
+from modules import add_three_numbers as add
+
+print(add(3, 5, 7))
+print(add(3, 0, 7))
+
+import cowsay
+
+cowsay.cow("Hello, World!")
+cowsay.tux("Hello, World!")
+cowsay.dragon("Hello, World!")
+cowsay.daemon("Hello, World!")
