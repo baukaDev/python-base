@@ -1,7 +1,7 @@
 class Cat: 
-  name = None
-  age = None
-  isHappy = None
+  # name = None
+  # age = None
+  # isHappy = None
 
   def __init__(self, name, age, isHappy = None):
     self.self_data(name, age, isHappy)
